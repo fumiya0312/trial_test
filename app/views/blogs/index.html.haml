@@ -1,0 +1,13 @@
+.content
+	%p Listing blogs
+%table.title_box
+	%th
+		%tr
+			%th Title
+		- @blogs.each do |blog|
+			%tr
+				%td= blog.title.html_safe
+				%td= link_to "Show", blog_path(blog)
+				%td= link_to "Edit", edit_blog_path(blog)
+				%td= link_to "Destroy", blog_path(blog), method: :delete
+= link_to "New Blog", new_blog_path

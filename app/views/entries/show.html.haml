@@ -1,0 +1,21 @@
+%p= @entry.blog.title
+%p #{@entry.title}
+%p #{@entry.body}
+= link_to "Edit"
+= link_to "Back", blog_path(@entry.blog)
+%p Listing comments
+%table.comments_content
+	%tr
+		%th Body
+	- @entry.comments.each do |comment|
+		- if comment.status == "approved"
+			%tr
+				%td= comment.body
+				%td
+				%td= link_to "Destroy", blog_entry_comment_path(@entry.blog, @entry, comment),method: :delete
+		- else
+			%tr
+				%td= "承認待ち"
+				%td= link_to "Approved", blog_entry_comment_path(@entry.blog, @entry, comment), method: :patch
+				%td= link_to "Destroy", blog_entry_comment_path(@entry.blog, @entry, comment), method: :delete
+= render 'comments/new'

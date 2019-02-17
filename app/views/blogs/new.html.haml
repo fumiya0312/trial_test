@@ -1,0 +1,7 @@
+.form_content
+	%p New blog
+	%h3 Title
+	= form_with model: Blog.new do |f|
+		= f.text_field :title
+		= f.submit :save
+= link_to "Back", '/blogs'
