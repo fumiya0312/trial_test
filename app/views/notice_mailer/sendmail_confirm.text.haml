@@ -1,5 +1,6 @@
-NoticeMailer#sendmail_confirm
+-# NoticeMailer#sendmail_confirm
 -# = @comment + ", find me in app/views/notice_mailer/sendmail_confirm.text.haml"
-%p 新しいコメントが登録されました。
-%p 承認または削除してください。
+新しいコメントが登録されました。
+承認または削除してください。
+<%= @comment.body %>
 -# URL：<%= url_for( :host => 'www.trial.test', :controller => 'comments', :action => 'create' ) %>

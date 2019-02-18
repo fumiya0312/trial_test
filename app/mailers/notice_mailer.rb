@@ -7,19 +7,13 @@ class NoticeMailer < ApplicationMailer
   #
   # default from: "good.job0312@gmail.com"
 
-  # def send_confirm(comment)
-  #   @comment = comment
-  #   mail to: "fumiya.sugino@favy.co.jp",
-  #   subject: "新しいコメントが投稿されました"
-  # end
-
   default from: "test@example.com"
 
   def sendmail_confirm(comment)
     @comment = comment
     mail(
       subject: "新しいコメントが投稿されました",
-      to: @comment
+      to: "admin@example.com"
     )do |format|
     format.text
     end
