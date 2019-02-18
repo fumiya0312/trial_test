@@ -3,5 +3,5 @@
 	%h3 Title
 	= simple_form_for Blog.new do |f|
 		= f.input :title
-		= f.submit :Save
-= link_to "Back", '/blogs'
+		= f.button :submit, 'Save'
+= link_to "Back", :back

@@ -1,8 +1,8 @@
 .form_content
 	%p New entry:
-	= form_with(model: Entry.new, scope: :entry, method: :post, url: blog_entries_path) do |f|
-		= f.text_field :title
-		= f.text_field :body
-		= f.submit :save
-= link_to "Back"
+	= simple_form_for(Entry.new, scope: :entry, method: :post, url: blog_entries_path) do |f|
+		= f.input :title
+		= f.input :body
+		= f.button :submit, 'Save'
+= link_to "Back", :back
 

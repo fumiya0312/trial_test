@@ -1,5 +1,5 @@
 %p New comment
 %span Body
-= form_with(model: Comment.new, scope: :comment, method: :post, url: blog_entry_comments_path(entry_id: @entry)) do |f|
-	= f.text_field :body
-	= f.submit :save
+= simple_form_for(Comment.new, scope: :comment, method: :post, url: blog_entry_comments_path(entry_id: @entry)) do |f|
+	= f.input :body
+	= f.button :submit, 'Save'
