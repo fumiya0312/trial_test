@@ -11,7 +11,7 @@ class CommentsController < ApplicationController
 		if comment.save
 			logger.debug("入ってる")
 			NoticeMailer.sendmail_confirm(comment).deliver_later
-			redirect_to blog_entry_path(@blog, @comment.entry)
+			redirect_to blog_entry_path(@blog, comment.entry)
 		else
 			render 'new'
 		end
