@@ -1,19 +1,21 @@
 require 'rails_helper'
 
-describe Blog do
-  it "1 + 1は2になること" do
-    expect(1 + 1).to eq 2
-  end
-end
 
-describe Blog do
-  it "titleがあれば有効な状態であること" do
-    blog = Blog.new(title: "ああふぁ")
-    expect(blog.valid?).to be_truthy
+describe Blog, type: :model do
+  before do
+    # @blog = FactoryBot.build(:blog)#rails_helperに  config.include FactoryBot::Syntax::Methods記述することで省略可能
+    @blog = build(:blog)
+  end
+  context "titleがある場合" do
+    it "有効な状態であること" do
+      expect(@blog.valid?).to be_truthy
+    end
   end
 
-  it "titleがあれば無効な状態であること" do
-    blog = Blog.new(title: nil)
-    expect(blog.valid?).to be_falsey
+  context "titleがない場合" do
+    it "無効な状態であること" do
+      @blog.title = nil
+      expect(@blog.valid?).to be_falsey
+    end
   end
 end
