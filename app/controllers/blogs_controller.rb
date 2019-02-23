@@ -1,6 +1,8 @@
 class BlogsController < ApplicationController
 	def index
 		@blogs = Blog.all
+		# @search = Blog.ransack(params[:q])
+		# @blog_results = @search.result
 	end
 
 	def new; end
