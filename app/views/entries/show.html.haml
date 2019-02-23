@@ -1,6 +1,7 @@
 %p= @entry.blog.title
 %p #{@entry.title}
 %p #{@entry.body}
+= image_tag "#{@entry.image}"
 = link_to "Edit"
 = link_to "Back", blog_path(@entry.blog)
 %p Listing comments
