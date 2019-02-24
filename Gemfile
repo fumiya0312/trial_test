@@ -41,6 +41,8 @@ gem 'erb2haml'
 gem 'pry-rails'
 gem 'simple_form'
 gem 'carrierwave'
+gem 'jquery-rails'
+gem 'jquery-ui-rails'
 
 group :development, :test do
   gem 'hirb'

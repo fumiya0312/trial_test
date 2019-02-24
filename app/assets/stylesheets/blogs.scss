@@ -10,4 +10,17 @@
 			font-size: 20px;
 		}
 	}
+	.btn {
+		background-color: #fbafaf;
+		list-style: none;
+		color: #fff;
+	  display: inline-block;
+	  font-size: 32px;
+	  font-weight: bold;
+	  margin-right: 15px;
+		padding: 5px 10px;
+	}
+	.active {
+		color: #000;
+	}
 }
