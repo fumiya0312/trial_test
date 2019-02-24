@@ -2,5 +2,7 @@
 -# = @comment + ", find me in app/views/notice_mailer/sendmail_confirm.text.haml"
 新しいコメントが登録されました。
 承認または削除してください。
-<%= @comment.body %>
+Blog: #{@comment.body}
+Entry: #{@entry.body}
+Comment: #{@blog.title}
 -# URL：<%= url_for( :host => 'www.trial.test', :controller => 'comments', :action => 'create' ) %>

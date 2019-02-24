@@ -11,6 +11,8 @@ class NoticeMailer < ApplicationMailer
 
   def sendmail_confirm(comment)
     @comment = comment
+    @entry = @comment.entry
+    @blog = @entry.blog
     mail(
       subject: "新しいコメントが投稿されました",
       to: "admin@example.com"
