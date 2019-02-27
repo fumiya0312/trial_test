@@ -1,8 +1,8 @@
 class BlogsController < ApplicationController
 	def index
 		@blogs = Blog.all
-		# @search = Blog.ransack(params[:q])
-		# @blog_results = @search.result
+		@q = Blog.ransack(params[:q])
+		@blogs = @q.result
 	end
 
 	def new; end
@@ -13,7 +13,6 @@ class BlogsController < ApplicationController
 	end
 
 	def show
-		# @blog = Blog.find(params[:id])
 		@blog = Blog.find(params[:id])
 	end
 
